@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface Track1ViewController : UIViewController <MPMediaPickerControllerDelegate>{
     IBOutlet UISlider *slVolume;
@@ -24,6 +26,13 @@
     IBOutlet UILabel *lbArtist;
     IBOutlet UIButton *btArtwork;
     IBOutlet UILabel *lbSongLength;
+    AVPlayer *audioPlayer;
+    MPMediaPickerController *track1Picker;
+    MPMediaItem *song;
+    IBOutlet UIButton *btPlayPause;
+    NSTimer *myTimer;
+    NSTimer *myTimer2;
+    IBOutlet UISlider *slProgress;
     
 }
 
@@ -42,5 +51,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *lbArtist;
 @property (strong, nonatomic) IBOutlet UIButton *btArtwork;
 @property (strong, nonatomic) IBOutlet UILabel *lbSongLength;
+@property (strong, nonatomic) IBOutlet AVPlayer *audioPlayer;
+@property (strong, nonatomic) MPMediaPickerController *track1Picker;
+@property (strong, nonatomic) MPMediaItem *song;
+@property (strong, nonatomic) IBOutlet UIButton *btPlayPause;
+@property (strong, nonatomic) NSTimer *myTimer;
+@property (strong, nonatomic) NSTimer *myTimer2;
+@property (strong, nonatomic) IBOutlet UISlider *slProgress;
 
 @end
