@@ -327,18 +327,16 @@
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="my6-2v-IxB">
-                                <rect key="frame" x="80" y="593" width="279" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5S-FC-itg">
                                 <rect key="frame" x="20" y="560" width="46" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
-                                <state key="normal" title="||">
+                                <state key="normal" title="^">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="sdp-zt-gkw"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-CU-u0I">
                                 <rect key="frame" x="93" y="162" width="94" height="21"/>
@@ -357,18 +355,26 @@
                                     <action selector="chooseSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="sTp-JW-lsd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2:10/4:20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc4-2j-ll0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00/00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uc4-2j-ll0">
                                 <rect key="frame" x="136" y="564" width="163" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Qba-5P-xHA">
+                                <rect key="frame" x="76" y="587" width="283" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderProgressChange:" destination="Xge-DO-q4V" eventType="valueChanged" id="SsX-lL-dFU"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="btArtwork" destination="LcP-Wh-Uh5" id="De7-jc-aoG"/>
+                        <outlet property="btPlayPause" destination="L5S-FC-itg" id="RHR-Oy-me0"/>
                         <outlet property="lbArtist" destination="iay-uQ-2uM" id="tF8-Et-TOz"/>
                         <outlet property="lbKey" destination="vHp-TB-5tc" id="2Vo-AS-g2I"/>
                         <outlet property="lbSongLength" destination="uc4-2j-ll0" id="qpJ-hh-X7R"/>
@@ -378,6 +384,7 @@
                         <outlet property="sgKeyFlag" destination="PAc-zy-JNd" id="Dct-vM-6YO"/>
                         <outlet property="sgSyncKey" destination="vBw-1R-tre" id="A8p-Mi-302"/>
                         <outlet property="sgSyncTempo" destination="h3m-u9-CNO" id="ULy-of-57i"/>
+                        <outlet property="slProgress" destination="Qba-5P-xHA" id="xz4-QF-Wzm"/>
                         <outlet property="slVolume" destination="qB3-hn-aVb" id="m48-Hh-txl"/>
                         <outlet property="stDecimal" destination="17i-nC-nMt" id="AbO-1b-M31"/>
                         <outlet property="stKey" destination="Zvh-eK-VDe" id="IWe-jv-Uk3"/>
@@ -424,7 +431,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
-                                    <action selector="sliderVolumeChanged2:" destination="DVQ-GE-tSI" eventType="valueChanged" id="w94-xH-hvO"/>
+                                    <action selector="sliderVolumeChanged:" destination="DVQ-GE-tSI" eventType="valueChanged" id="yY0-cl-Ba8"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EM-19-QtC">
@@ -453,7 +460,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
-                                    <action selector="tempoDecimalChanged2:" destination="DVQ-GE-tSI" eventType="valueChanged" id="Ogl-K2-e77"/>
+                                    <action selector="tempoDecimalChanged:" destination="DVQ-GE-tSI" eventType="valueChanged" id="tyq-cG-fxv"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="128" minimumValue="1" maximumValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="IWg-V5-ANT">
@@ -461,18 +468,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
-                                    <action selector="tempoWholeChanged2:" destination="DVQ-GE-tSI" eventType="valueChanged" id="fJW-pF-DZ6"/>
+                                    <action selector="tempoWholeChanged:" destination="DVQ-GE-tSI" eventType="valueChanged" id="xxe-HF-t9b"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+/- 0.1bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-kv-3cv">
                                 <rect key="frame" x="39" y="265" width="94" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2:10/4:20" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULz-6l-Ulr">
-                                <rect key="frame" x="172" y="566" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -528,7 +528,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
-                                    <action selector="keyChanged2:" destination="DVQ-GE-tSI" eventType="valueChanged" id="QwG-uG-16e"/>
+                                    <action selector="keyChanged:" destination="DVQ-GE-tSI" eventType="valueChanged" id="Ml0-we-nnz"/>
                                 </connections>
                             </stepper>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vVP-Hu-47C">
@@ -563,18 +563,16 @@
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-Kw-rus">
-                                <rect key="frame" x="80" y="593" width="279" height="2"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nK-Ng-EHh">
                                 <rect key="frame" x="20" y="560" width="46" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
-                                <state key="normal" title="||">
+                                <state key="normal" title="^">
                                     <color key="titleColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="playSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="4gP-qZ-Ale"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHD-QI-upN">
                                 <rect key="frame" x="81" y="168" width="94" height="21"/>
@@ -594,22 +592,40 @@
                                 <rect key="frame" x="237" y="28" width="122" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="chooseSong:" destination="DVQ-GE-tSI" eventType="touchDragInside" id="k86-gm-rgH"/>
+                                    <action selector="chooseSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="lbF-7R-ccf"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1Ba-4e-4dm">
+                                <rect key="frame" x="78" y="585" width="282" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <connections>
+                                    <action selector="sliderProgressChange:" destination="DVQ-GE-tSI" eventType="valueChanged" id="Q29-Xf-f8w"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00/00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULz-6l-Ulr">
+                                <rect key="frame" x="160" y="560" width="119" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="btArtwork2" destination="ixv-5Z-gYP" id="2C1-yW-8Po"/>
+                        <outlet property="btPlayPause2" destination="8nK-Ng-EHh" id="qUL-cM-Ete"/>
                         <outlet property="lbArtist2" destination="72R-1z-FfR" id="HsY-IA-ytx"/>
                         <outlet property="lbKey2" destination="OdR-Wu-kdw" id="VDd-xw-bjq"/>
+                        <outlet property="lbSongLength2" destination="ULz-6l-Ulr" id="e3n-zP-Aq9"/>
                         <outlet property="lbSongTitle2" destination="8tU-Ql-i7b" id="edK-dK-mOb"/>
                         <outlet property="lbTempo2" destination="859-U9-guI" id="Cci-4e-yGC"/>
                         <outlet property="lbVolume2" destination="8EM-19-QtC" id="E2d-eZ-GAR"/>
                         <outlet property="sgKeyFlag2" destination="0OL-AM-2yU" id="ALQ-J2-Ci2"/>
                         <outlet property="sgSyncKey2" destination="V9g-7t-dIC" id="OT7-Km-Qy6"/>
                         <outlet property="sgSyncTempo2" destination="vVP-Hu-47C" id="JAd-aG-MtB"/>
+                        <outlet property="slProgress2" destination="1Ba-4e-4dm" id="nZp-T4-vFD"/>
                         <outlet property="slVolume2" destination="Pl1-Tg-la6" id="zsQ-cw-zvV"/>
                         <outlet property="stDecimal2" destination="cTJ-JA-3Ec" id="QFp-iI-ZWh"/>
                         <outlet property="stKey2" destination="5FL-6g-SP3" id="WCi-5R-fDr"/>

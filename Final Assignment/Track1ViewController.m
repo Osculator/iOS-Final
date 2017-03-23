@@ -15,11 +15,12 @@
 @end
 
 @implementation Track1ViewController
-@synthesize keyArray, slVolume, sgKeyFlag, sgSyncKey, sgSyncTempo, stKey, stDecimal, stWholeNum, lbVolume, lbTempo, lbKey, lbArtist, lbSongTitle, btArtwork, lbSongLength;
+@synthesize keyArray, slVolume, sgKeyFlag, sgSyncKey, sgSyncTempo, stKey, stDecimal, stWholeNum, lbVolume, lbTempo, lbKey, lbArtist, lbSongTitle, btArtwork, lbSongLength, audioPlayer, track1Picker, song, btPlayPause, myTimer, myTimer2, slProgress;
 
 - (IBAction) chooseSong: (id) sender
 {
-    MPMediaPickerController *track1Picker =
+    //MPMediaPickerController *track1Picker =
+    track1Picker =
     [[MPMediaPickerController alloc] initWithMediaTypes: MPMediaTypeMusic];
     
     track1Picker.delegate                     = self;
@@ -35,16 +36,25 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     if(mediaItemCollection)
     {
-        MPMediaItem *song=[[mediaItemCollection items] objectAtIndex:0];
+        //MPMediaItem *song=[[mediaItemCollection items] objectAtIndex:0];
+        song=[[mediaItemCollection items] objectAtIndex:0];
         if (! song) {
             return;
         }
         NSString *songArtist = [NSString stringWithFormat:@"%@", song.artist];
         NSString *songTitle = [NSString stringWithFormat:@"%@", song.title];
-        //NSString *songTime = [NSString stringWithFormat:@"%f", song.playbackDuration];
-        [lbArtist setText:songArtist];
-        [lbSongTitle setText:songTitle];
-        //[lbSongLength setText:songTime];
+        int songSeconds = song.playbackDuration;
+        int songMinute = song.playbackDuration/60;
+        songSeconds = (int)songSeconds%60;
+        if([songArtist isEqualToString:@"(null)"])
+            [lbArtist setText:@"Artist Unknown"];
+        else
+            [lbArtist setText:songArtist];
+        if([songTitle isEqualToString:@"(null)"])
+            [lbSongTitle setText:@"Title Unknown"];
+        else
+            [lbSongTitle setText:songTitle];
+        [lbSongLength setText:[NSString stringWithFormat:@"00:00/%02d:%02d",songMinute, songSeconds]];
         
         CGSize artworkSize = CGSizeMake(30, 30);
         UIImage *artworkImage;
@@ -55,17 +65,76 @@
             NSLog(@"artwork not available");
             artworkImage = [UIImage imageNamed:@"AlbumArt1.png"];
         }
-        NSLog(@"Albumn art should appear");
         [btArtwork setBackgroundImage:artworkImage forState:UIControlStateNormal];
         
+        if(!audioPlayer){
+            audioPlayer = [[AVPlayer alloc] initWithURL:[song valueForProperty:MPMediaItemPropertyAssetURL]];
+        } else {
+            //[audioPlayer replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:itemURL]];
+            NSLog(@"exit");
+            return;
+        }
     }
-    
-    
 }
 
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)playSong:(id)sender
+{
+    NSString *title = [(UIButton *)sender currentTitle];
+    if([title isEqualToString:@"||"])
+    {
+        [audioPlayer pause];
+        title = @"^";
+        [btPlayPause setTitle:title forState:UIControlStateNormal];
+    }
+    else
+    {
+        if(audioPlayer!=nil)
+        {
+            [audioPlayer play];
+            myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                             target:self
+                                                           selector:@selector(updateTimeLeft)
+                                                           userInfo:nil
+                                                            repeats:YES];
+            myTimer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
+                                                   target:self
+                                                 selector:@selector(sliderProgressChange:)
+                                                 userInfo:nil
+                                                  repeats:YES];
+            title = @"||";
+            [btPlayPause setTitle:title forState:UIControlStateNormal];
+        }
+    }
+    
+}
+
+- (void)updateTimeLeft {
+    AVPlayerItem *currentItem = audioPlayer.currentItem;
+    NSTimeInterval timeLeft = CMTimeGetSeconds(currentItem.currentTime);
+    // update your UI with timeLeft
+    int songSeconds = song.playbackDuration;
+    int songMinute = song.playbackDuration/60;
+    songSeconds = (int)songSeconds%60;
+    
+    int curSongSeconds = timeLeft;
+    int curSongMinutes = timeLeft/60;
+    curSongSeconds = (int)curSongSeconds%60;
+
+    [lbSongLength setText:[NSString stringWithFormat:@"%02d:%02d/%02d:%02d",curSongMinutes, curSongSeconds, songMinute, songSeconds]];
+}
+
+-(IBAction)sliderProgressChange:(id)sender
+{
+    AVPlayerItem *currentItem = audioPlayer.currentItem;
+    NSTimeInterval timeLeft = CMTimeGetSeconds(currentItem.currentTime);
+    NSTimeInterval dur = CMTimeGetSeconds(currentItem.duration);
+    [slProgress setMaximumValue:dur];
+    [slProgress setValue:timeLeft];
 }
 
 -(IBAction)sliderVolumeChanged:(id)sender
@@ -105,6 +174,7 @@
     // Do any additional setup after loading the view.
     keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"B#",@"C",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     [self updateLabel];
+    //slProgress.transform = CGAffineTransformMakeScale(0.5, 0.5);
 }
 
 - (void)didReceiveMemoryWarning {
