@@ -174,6 +174,7 @@
     // Do any additional setup after loading the view.
     keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"B#",@"C",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     [self updateLabel];
+    [slProgress setThumbImage:[UIImage new] forState:UIControlStateNormal];
     //slProgress.transform = CGAffineTransformMakeScale(0.5, 0.5);
 }
 

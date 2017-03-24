@@ -174,7 +174,7 @@
     // Do any additional setup after loading the view.
     keyArray2 = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"B#",@"C",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     [self updateLabel];
-
+    [slProgress2 setThumbImage:[UIImage new] forState:UIControlStateNormal];
 }
 
 - (void)didReceiveMemoryWarning {
