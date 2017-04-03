@@ -61,6 +61,7 @@
 }
 
 - (IBAction)unwindToThisViewController:(UIStoryboardSegue *)sender {
+    NSLog(@"%@", md.song.artist);
     NSString *songArtist = [NSString stringWithFormat:@"%@", md.song.artist];
     NSString *songTitle = [NSString stringWithFormat:@"%@", md.song.title];
     if([songArtist isEqualToString:@"(null)"])

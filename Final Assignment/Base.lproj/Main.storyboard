@@ -55,13 +55,6 @@
                                 <color key="textColor" red="0.50587886571884155" green="0.50970339775085449" blue="0.52265042066574097" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-iJ-zo8">
-                                <rect key="frame" x="16" y="227" width="343" height="112"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <segue destination="Xge-DO-q4V" kind="presentation" id="G7S-0a-9nW"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="AlbumArt1.png" translatesAutoresizingMaskIntoConstraints="NO" id="2s6-bP-cMe">
                                 <rect key="frame" x="258" y="240" width="86" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -131,6 +124,9 @@
                                 <state key="normal" title="Play/Pause">
                                     <color key="titleColor" red="0.21358916159999999" green="0.80064654349999997" blue="0.4423116446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="playPauseSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fqr-4i-9di"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBN-Nz-EcH">
                                 <rect key="frame" x="224" y="488" width="93" height="30"/>
@@ -139,6 +135,9 @@
                                 <state key="normal" title="Stop">
                                     <color key="titleColor" red="1" green="0.25665354480000002" blue="0.23205424620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="stopSongs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Ep-wf-OI2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUl-hf-r35">
                                 <rect key="frame" x="16" y="353" width="343" height="112"/>
@@ -155,9 +154,32 @@
                                     <color key="titleColor" red="0.92473977799999996" green="0.025700269269999999" blue="0.54855841400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-fQ-rNb">
+                                <rect key="frame" x="258" y="240" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CnY-Qq-oaJ">
+                                <rect key="frame" x="258" y="367" width="86" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeU-iJ-zo8">
+                                <rect key="frame" x="16" y="227" width="343" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Xge-DO-q4V" kind="presentation" id="G7S-0a-9nW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="btArtwork" destination="sNM-fQ-rNb" id="owV-PY-qBS"/>
+                        <outlet property="btArtwork2" destination="CnY-Qq-oaJ" id="zcn-Kh-Ion"/>
+                        <outlet property="lbArtist" destination="8Qm-7p-4k6" id="cyr-Pl-5fQ"/>
+                        <outlet property="lbArtist2" destination="Tqp-aQ-SbN" id="JTD-WJ-H3r"/>
+                        <outlet property="lbSongTitle" destination="46A-bU-scx" id="nr1-BU-q0S"/>
+                        <outlet property="lbSongTitle2" destination="K6y-v5-iUg" id="IGu-AE-aXW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -344,6 +366,13 @@
                                     <action selector="sliderProgressChange:" destination="Xge-DO-q4V" eventType="valueChanged" id="SsX-lL-dFU"/>
                                 </connections>
                             </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgp-wv-big">
+                                <rect key="frame" x="16" y="28" width="341" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="chooseSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="cJe-Q4-oDU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -367,7 +396,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vm7-Z4-BLQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2IC-cV-Omz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="784.79999999999995" y="138.98050974512745"/>
+            <point key="canvasLocation" x="884" y="138.98050974512745"/>
         </scene>
         <!--Track2 View Controller-->
         <scene sceneID="Vpb-7i-GJ9">
@@ -586,6 +615,13 @@
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BqR-W7-J9L">
+                                <rect key="frame" x="16" y="28" width="342" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="chooseSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="TcD-Cj-eXZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
