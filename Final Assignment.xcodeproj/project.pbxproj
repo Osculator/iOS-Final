@@ -429,7 +429,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment1;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
+>>>>>>> origin/master
 =======
 				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
 >>>>>>> origin/master
@@ -447,7 +451,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment1;
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
+>>>>>>> origin/master
 =======
 				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
 >>>>>>> origin/master
