@@ -90,6 +90,8 @@
         }
         //NSString *bpm;
         //[lbTempo setText:[NSString stringWithFormat:@"%.02f bpm",md.audioPlayer.rate]];
+        //md.songBPM = [[md.song valueForProperty:MPMediaItemPropertyBeatsPerMinute]intValue];
+        //NSLog(@"the bpm is %.2d", md.songBPM);
     }
 }
 

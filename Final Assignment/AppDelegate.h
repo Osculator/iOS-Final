@@ -21,7 +21,7 @@
     MPMediaItem *song2;
     float volNum;
     float volNum2;
-    float songBPM;
+    int songBPM;
     float songBPM2;
 }
 
@@ -33,7 +33,7 @@
 @property (strong, nonatomic) MPMediaItem *song2;
 @property float volNum;
 @property float volNum2;
-@property float songBPM;
+@property int songBPM;
 @property float songBPM2;
 
 
