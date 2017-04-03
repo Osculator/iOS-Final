@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE930E4B1E8D687700435FB9 /* songData.m in Sources */ = {isa = PBXBuildFile; fileRef = AE930E4A1E8D687700435FB9 /* songData.m */; };
 		AEA74B8E1E7F45A0000FA151 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA74B8D1E7F45A0000FA151 /* main.m */; };
 		AEA74B911E7F45A0000FA151 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA74B901E7F45A0000FA151 /* AppDelegate.m */; };
 		AEA74B941E7F45A0000FA151 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEA74B931E7F45A0000FA151 /* ViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE930E491E8D687700435FB9 /* songData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = songData.h; sourceTree = "<group>"; };
+		AE930E4A1E8D687700435FB9 /* songData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = songData.m; sourceTree = "<group>"; };
 		AEA74B891E7F45A0000FA151 /* Final Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEA74B8D1E7F45A0000FA151 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AEA74B8F1E7F45A0000FA151 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 			children = (
 				AEA74B8F1E7F45A0000FA151 /* AppDelegate.h */,
 				AEA74B901E7F45A0000FA151 /* AppDelegate.m */,
+				AE930E491E8D687700435FB9 /* songData.h */,
+				AE930E4A1E8D687700435FB9 /* songData.m */,
 			);
 			name = "Special Classes";
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				AEA74B911E7F45A0000FA151 /* AppDelegate.m in Sources */,
 				AEA74BAF1E803472000FA151 /* Track1ViewController.m in Sources */,
 				AEA74B8E1E7F45A0000FA151 /* main.m in Sources */,
+				AE930E4B1E8D687700435FB9 /* songData.m in Sources */,
 				AEAF08501E83EB610061C638 /* Track2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,7 +428,7 @@
 				INFOPLIST_FILE = "Final Assignment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment;
+				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -436,7 +442,7 @@
 				INFOPLIST_FILE = "Final Assignment/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment;
+				PRODUCT_BUNDLE_IDENTIFIER = FinalAssignment2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

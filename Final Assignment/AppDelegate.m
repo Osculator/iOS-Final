@@ -14,7 +14,7 @@
 @end
 
 @implementation AppDelegate
-@synthesize keyArray;
+@synthesize keyArray, audioPlayer, audioPlayer2, song, song2, volNum, volNum2, songBPM, songBPM2;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
