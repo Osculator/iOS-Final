@@ -14,7 +14,7 @@
 @end
 
 @implementation Track1ViewController
-@synthesize keyArray, slVolume, sgKeyFlag, sgSyncKey, sgSyncTempo, stKey, stDecimal, stWholeNum, lbVolume, lbTempo, lbKey, lbArtist, lbSongTitle, btArtwork, lbSongLength, track1Picker, btPlayPause, myTimer, myTimer2, slProgress, md;//audioPlayer,song;
+@synthesize slVolume, sgKeyFlag, sgSyncKey, sgSyncTempo, stKey, stDecimal, stWholeNum, lbVolume, lbTempo, lbKey, lbArtist, lbSongTitle, btArtwork, lbSongLength, track1Picker, btPlayPause, myTimer, myTimer2, slProgress, md;//audioPlayer,song;
 
 - (IBAction) chooseSong: (id) sender
 {
@@ -26,26 +26,23 @@
     track1Picker.prompt                       = NSLocalizedString (@"Select any song from the list", @"Prompt to user to choose some songs to play");
     
     [self presentViewController:track1Picker animated:YES completion:nil];
-    if(md.audioPlayer)
-        [md.audioPlayer pause];
+    if(md.playerNode1)
+        [md.playerNode1 pause];
     
 }
 
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
 {
-    //Data *person = [[Data alloc] initWitName:tbName.text Email:tbEmail.text Food:tbFood.text];
     NSString *title=btPlayPause.titleLabel.text;
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@"⏸"]){
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
     
-    md.audioPlayer=nil;
     
     [self dismissViewControllerAnimated:YES completion:nil];
     if(mediaItemCollection)
     {
-        //MPMediaItem *song=[[mediaItemCollection items] objectAtIndex:0];
         md.song=[[mediaItemCollection items] objectAtIndex:0];
         if (! md.song) {
             return;
@@ -54,6 +51,7 @@
         NSString *songTitle = [NSString stringWithFormat:@"%@", md.song.title];
         int songSeconds = md.song.playbackDuration;
         int songMinute = md.song.playbackDuration/60;
+        
         songSeconds = (int)songSeconds%60;
         if([songArtist isEqualToString:@"(null)"])
             [lbArtist setText:@"Artist Unknown"];
@@ -70,26 +68,23 @@
         MPMediaItemArtwork *artwork = [md.song valueForProperty: MPMediaItemPropertyArtwork];
         artworkImage = [artwork imageWithSize:artworkSize];
         
+        NSURL *url = [md.song valueForProperty:MPMediaItemPropertyAssetURL];
+        AVAudioFile *file = [[AVAudioFile alloc] initForReading:url error:nil];
+        md.buffer = [[AVAudioPCMBuffer alloc] initWithPCMFormat:file.processingFormat frameCapacity:(UInt32)file.length];
+        [file readIntoBuffer:md.buffer error:nil];
+        [md adjustTimePitchUnit:1];
+        [md attachAndRouteNodes:1];
+        [md prepareForPlayback:1];
+
         if (artworkImage == nil) {
             NSLog(@"artwork not available");
             artworkImage = [UIImage imageNamed:@"AlbumArt1.png"];
         }
         [btArtwork setBackgroundImage:artworkImage forState:UIControlStateNormal];
         
-        NSURL *url = [md.song valueForProperty:MPMediaItemPropertyAssetURL];
-        
-        if([title isEqualToString:@"||"])
-            [md.audioPlayer pause];
-        
-        if(!md.audioPlayer){
-            md.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-        } else {
-            //[audioPlayer replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:itemURL]];
-            NSLog(@"exit");
-            return;
-        }
-        //NSString *bpm;
-        //[lbTempo setText:[NSString stringWithFormat:@"%.02f bpm",md.audioPlayer.rate]];
+        if([title isEqualToString:@"⏸"])
+            [md.playerNode1 pause];
+
     }
 }
 
@@ -99,8 +94,8 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@"⏸"]){
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
 }
@@ -108,37 +103,26 @@
 -(IBAction)playSong:(id)sender
 {
     NSString *title = [(UIButton *)sender currentTitle];
-    if([title isEqualToString:@"||"])
+    if([title isEqualToString:@"⏸"])
     {
-        [md.audioPlayer pause];
-        title = @"^";
+        [md.playerNode1 pause];
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
     else
     {
-        if(md.audioPlayer!=nil)
-        {
-            [md.audioPlayer play];
-            myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                             target:self
-                                                           selector:@selector(updateTimeLeft)
-                                                           userInfo:nil
-                                                            repeats:YES];
-            myTimer2 = [NSTimer scheduledTimerWithTimeInterval:1.0
-                                                   target:self
-                                                 selector:@selector(sliderProgressChange:)
-                                                 userInfo:nil
-                                                  repeats:YES];
-            title = @"||";
+        [md adjustTimePitchUnit:1];
+        md.playerNode1.volume = slVolume.value;
+            [md.playerNode1 play];
+            title = @"⏸";
             [btPlayPause setTitle:title forState:UIControlStateNormal];
-        }
     }
     
 }
 
 - (void)updateTimeLeft {
-    //AVPlayerItem *currentItem = md.audioPlayer.currentItem;
-    NSTimeInterval timeLeft = md.audioPlayer.currentTime;
+    //AVPlayerItem *currentItem = md.playerNode1.currentItem;
+    NSTimeInterval timeLeft = 500;
     // update your UI with timeLeft
     int songSeconds = md.song.playbackDuration;
     int songMinute = md.song.playbackDuration/60;
@@ -152,10 +136,8 @@
     
     if(timeLeft == md.song.playbackDuration)
     {
-        [btPlayPause setTitle:@"^" forState:UIControlStateNormal];
-        [md.audioPlayer pause];
-        //[md.audioPlayer seekToTime:kCMTimeZero];
-        md.audioPlayer.currentTime=0;
+        [btPlayPause setTitle:@"▶" forState:UIControlStateNormal];
+        [md.playerNode1 pause];
         
         curSongSeconds = 0;
         curSongMinutes = 0;
@@ -167,9 +149,9 @@
 
 -(IBAction)sliderProgressChange:(id)sender
 {
-    //AVAudioPlayerItem *currentItem = md.audioPlayer.currentItem;
-    NSTimeInterval timeLeft = md.audioPlayer.currentTime;
-    NSTimeInterval dur = md.audioPlayer.duration;
+    //AVAudioPlayerItem *currentItem = md.playerNode1.currentItem;
+    NSTimeInterval timeLeft = 0;
+    NSTimeInterval dur = md.song.playbackDuration;
     [slProgress setMaximumValue:dur];
     [slProgress setValue:timeLeft];
 }
@@ -180,7 +162,7 @@
     md.volNum = slVolume.value;
     md.volNum=md.volNum/100;
     //NSLog(@"%.2f", volNum);
-    md.audioPlayer.volume=md.volNum;
+    md.playerNode1.volume=md.volNum;
 }
 
 -(IBAction)tempoDecimalChanged:(id)sender{
@@ -199,7 +181,8 @@
 
 -(IBAction)keyChanged:(id)sender {
     int key = stKey.value;
-    [lbKey setText:[keyArray objectAtIndex:key]];
+    [md.timePitchUnit1 setPitch:(key*100)];
+    [lbKey setText:[md.keyArray objectAtIndex:key]];
 }
 
 -(void)updateLabel
@@ -213,7 +196,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"B#",@"C",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     [self updateLabel];
     [slProgress setThumbImage:[UIImage new] forState:UIControlStateNormal];
     md = (AppDelegate *) [[UIApplication sharedApplication] delegate];
@@ -225,10 +207,8 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-    if(md.audioPlayer){
-        [md.audioPlayer pause];
-        //[md.audioPlayer seekToTime:kCMTimeZero];
-        md.audioPlayer.currentTime=0;
+    if(md.playerNode1){
+        [md.playerNode1 stop];
     }
 }
 

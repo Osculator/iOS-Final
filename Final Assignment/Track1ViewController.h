@@ -38,7 +38,6 @@
     
 }
 
-@property (strong, nonatomic) NSArray *keyArray;
 @property (strong, nonatomic) IBOutlet UISlider *slVolume;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sgKeyFlag;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *sgSyncTempo;

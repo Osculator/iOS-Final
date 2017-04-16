@@ -7,21 +7,61 @@
 //
 
 #import "AppDelegate.h"
-#import <MediaPlayer/MediaPlayer.h>
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-@synthesize keyArray, audioPlayer, audioPlayer2, song, song2, volNum, volNum2, songBPM, songBPM2;
+@synthesize keyArray, song, song2, volNum, volNum2, songBPM, songBPM2, engine, buffer, timePitchUnit1, timePitchUnit2, playerNode1, playerNode2, mixBPM, mixKey, songFile1, songFile2, song1Key, song2Key;
 
+-(void)attachAndRouteNodes:(NSInteger)trackNumber{
+    if (trackNumber == 1) {
+        [engine attachNode:playerNode1];
+        [engine attachNode:timePitchUnit1];
+        [engine connect:playerNode1 to:engine.mainMixerNode format:buffer.format];
+        [engine connect:timePitchUnit1 to:engine.mainMixerNode format:buffer.format];
+    } if (trackNumber == 2) {
+        [engine attachNode:playerNode2];
+        [engine attachNode:timePitchUnit2];
+        [engine connect:playerNode2 to:timePitchUnit2 format:buffer.format];
+        [engine connect:timePitchUnit2 to:engine.mainMixerNode format:buffer.format];
+    }
+}
+
+-(void)adjustTimePitchUnit:(NSInteger)unitNumber {
+    if (unitNumber == 1){
+        [timePitchUnit1 setRate:mixBPM-songBPM];
+        [timePitchUnit1 setPitch:(mixKey*100) - (song1Key*100)];
+    } else {
+        [timePitchUnit2 setRate:mixBPM-songBPM2];
+        [timePitchUnit2 setPitch:(mixKey*100) - (song2Key*100)];
+    }
+}
+
+-(void)prepareForPlayback:(NSInteger)trackNumber {
+    if (trackNumber == 1) {
+        [playerNode1 scheduleFile:songFile1 atTime:nil completionHandler:nil];
+    } if (trackNumber == 2) {
+        [playerNode2 scheduleFile:songFile2 atTime:nil completionHandler:nil];
+    } if (trackNumber == 0) {
+        [playerNode1 scheduleFile:songFile1 atTime:nil completionHandler:nil];
+        [playerNode2 scheduleFile:songFile2 atTime:nil completionHandler:nil];
+    }
+    [engine prepare];
+    [engine startAndReturnError:nil];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    engine = [[AVAudioEngine alloc] init];
+    playerNode1 = [[AVAudioPlayerNode alloc] init];
+    playerNode2 = [[AVAudioPlayerNode alloc] init];
+    mixBPM = 128;
+    mixKey = 0;
+    keyArray = [NSArray arrayWithObjects:@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",@"A",@"A#",@"B",nil];
     return YES;
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

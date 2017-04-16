@@ -17,23 +17,20 @@
 @synthesize md, lbArtist, lbArtist2, lbSongTitle, lbSongTitle2, btArtwork, btArtwork2;
 
 -(IBAction)playPauseSong:(id)sender{
-    if([md.audioPlayer isPlaying])
-        [md.audioPlayer pause];
+    if([md.playerNode1 isPlaying])
+        [md.playerNode1 pause];
     else
-        [md.audioPlayer play];
-    if([md.audioPlayer2 isPlaying])
-        [md.audioPlayer2 pause];
+        [md.playerNode1 play];
+    if([md.playerNode2 isPlaying])
+        [md.playerNode2 pause];
     else
-        [md.audioPlayer2 play];
+        [md.playerNode2 play];
 }
 
 -(IBAction)stopSongs:(id)sender
 {
-    [md.audioPlayer pause];
-    md.audioPlayer.currentTime=0;
-    [md.audioPlayer2 pause];
-    md.audioPlayer2.currentTime=0;
-
+    [md.playerNode1 stop];
+    [md.playerNode2 stop];
 }
 
 
@@ -46,18 +43,10 @@
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
-    if(md.audioPlayer){
-        [md.audioPlayer pause];
-        //[md.audioPlayer seekToTime:kCMTimeZero];
-        md.audioPlayer.currentTime=0;
-    }
-    if(md.audioPlayer2){
-        [md.audioPlayer2 pause];
-        //[md.audioPlayer2 seekToTime:kCMTimeZero];
-        md.audioPlayer.currentTime=0;
-    }
-    md.audioPlayer.volume=md.volNum;
-    md.audioPlayer2.volume=md.volNum2;
+    if (md.playerNode1.isPlaying)
+        [md.playerNode1 stop];
+    if (md.playerNode2.isPlaying)
+        [md.playerNode2 stop];
 }
 
 - (IBAction)unwindToThisViewController:(UIStoryboardSegue *)sender {
@@ -105,8 +94,8 @@
         artworkImage2 = [UIImage imageNamed:@"AlbumArt2.png"];
     }
     [btArtwork2 setBackgroundImage:artworkImage2 forState:UIControlStateNormal];
-    md.audioPlayer.volume=md.volNum;
-    md.audioPlayer2.volume=md.volNum2;
+    md.playerNode1.volume=md.volNum;
+    md.playerNode2.volume=md.volNum2;
 }
 
 
