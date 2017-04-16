@@ -7,9 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-/*#import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVPlayer.h>
-#import <AVFoundation/AVFoundation.h>*/
 #import "AppDelegate.h"
 
 @interface ViewController : UIViewController

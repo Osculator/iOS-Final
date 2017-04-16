@@ -19,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     return YES;
 }
 

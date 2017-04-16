@@ -78,9 +78,6 @@
         
         NSURL *url = [md.song valueForProperty:MPMediaItemPropertyAssetURL];
         
-        if([title isEqualToString:@"||"])
-            [md.audioPlayer pause];
-        
         if(!md.audioPlayer){
             md.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         } else {
@@ -215,7 +212,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"B#",@"C",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
     [self updateLabel];
     [slProgress setThumbImage:[UIImage new] forState:UIControlStateNormal];
     md = (AppDelegate *) [[UIApplication sharedApplication] delegate];

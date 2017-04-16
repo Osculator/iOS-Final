@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -31,22 +31,8 @@
                                 <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="28"/>
                                 <state key="normal" title="Mix"/>
                                 <connections>
-                                    <segue destination="1lB-dJ-Riu" kind="presentation" id="ZZd-Kb-c6c"/>
+                                    <segue destination="1lB-dJ-Riu" kind="presentation" modalTransitionStyle="crossDissolve" id="ZZd-Kb-c6c"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCn-3z-aa5">
-                                <rect key="frame" x="200" y="605" width="139" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="28"/>
-                                <state key="normal" title="Help?">
-                                    <color key="titleColor" red="0.92473977799999996" green="0.025700269269999999" blue="0.54855841400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-RH-7nL">
-                                <rect key="frame" x="28" y="606" width="139" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="28"/>
-                                <state key="normal" title="Options"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Mix:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1C8-YS-XLp">
                                 <rect key="frame" x="108" y="187" width="159" height="39"/>
@@ -143,7 +129,7 @@
                                 <rect key="frame" x="16" y="353" width="343" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="DVQ-GE-tSI" kind="presentation" id="Gyi-Dk-dBa"/>
+                                    <segue destination="DVQ-GE-tSI" kind="presentation" modalTransitionStyle="crossDissolve" id="Gyi-Dk-dBa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8y-yL-adS">
@@ -153,6 +139,9 @@
                                 <state key="normal" title="Drums">
                                     <color key="titleColor" red="0.92473977799999996" green="0.025700269269999999" blue="0.54855841400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="OV4-M3-i13" kind="presentation" modalTransitionStyle="crossDissolve" id="BgY-5n-1B1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNM-fQ-rNb">
                                 <rect key="frame" x="258" y="240" width="86" height="86"/>
@@ -166,7 +155,18 @@
                                 <rect key="frame" x="16" y="227" width="343" height="112"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="Xge-DO-q4V" kind="presentation" id="G7S-0a-9nW"/>
+                                    <segue destination="Xge-DO-q4V" kind="presentation" modalTransitionStyle="crossDissolve" id="G7S-0a-9nW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-RH-7nL">
+                                <rect key="frame" x="118" y="605" width="139" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="28"/>
+                                <state key="normal" title="Options">
+                                    <color key="titleColor" red="0.50587886569999996" green="0.50970339779999996" blue="0.52265042070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oNk-x1-hXj" kind="show" id="TKf-kD-SYR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -216,7 +216,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="qB3-hn-aVb">
-                                <rect key="frame" x="14" y="266" width="347" height="31"/>
+                                <rect key="frame" x="14" y="223" width="347" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -224,35 +224,35 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTd-O0-Mkk">
-                                <rect key="frame" x="191" y="238" width="108" height="21"/>
+                                <rect key="frame" x="191" y="195" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ji-dn-QZc">
-                                <rect key="frame" x="101" y="296" width="81" height="41"/>
+                                <rect key="frame" x="101" y="300" width="81" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="128.0 bpm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J4Z-Fz-Qjz">
-                                <rect key="frame" x="189" y="296" width="129" height="44"/>
+                                <rect key="frame" x="189" y="300" width="129" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHp-TB-5tc">
-                                <rect key="frame" x="39" y="489" width="55" height="38"/>
+                                <rect key="frame" x="39" y="482" width="55" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="128" minimumValue="1" maximumValue="320" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="17i-nC-nMt">
-                                <rect key="frame" x="39" y="371" width="94" height="29"/>
+                                <rect key="frame" x="39" y="375" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -260,7 +260,7 @@
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="128" minimumValue="1" maximumValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="UOd-b5-WwH">
-                                <rect key="frame" x="241" y="371" width="94" height="29"/>
+                                <rect key="frame" x="241" y="375" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
@@ -268,14 +268,14 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+/- 0.1bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcT-MO-hpg">
-                                <rect key="frame" x="39" y="340" width="94" height="21"/>
+                                <rect key="frame" x="39" y="344" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+/- 1bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-Um-69F">
-                                <rect key="frame" x="241" y="341" width="94" height="21"/>
+                                <rect key="frame" x="241" y="345" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -284,24 +284,32 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Zm-nH-laY">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.3529411764705882" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem title="Home" width="71" id="lNf-P9-w9h">
+                                    <barButtonItem title="Home" width="76" id="lNf-P9-w9h">
                                         <connections>
                                             <segue destination="2IC-cV-Omz" kind="unwind" unwindAction="unwindToThisViewController:" id="nnv-c1-Hjx"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Mix" width="93" id="M1U-OM-vp1">
+                                    <barButtonItem title="Mix" width="76" id="M1U-OM-vp1">
                                         <connections>
-                                            <segue destination="1lB-dJ-Riu" kind="presentation" id="KJ3-Jb-oqd"/>
+                                            <segue destination="1lB-dJ-Riu" kind="presentation" modalTransitionStyle="crossDissolve" id="KJ3-Jb-oqd"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Drums" width="68" id="Nvz-41-e5y"/>
-                                    <barButtonItem title="Options" width="84" id="O0n-5O-Rdt"/>
+                                    <barButtonItem title="Drums" width="76" id="Nvz-41-e5y">
+                                        <connections>
+                                            <segue destination="OV4-M3-i13" kind="presentation" modalTransitionStyle="crossDissolve" id="xuO-aM-2jg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Options" width="76" id="O0n-5O-Rdt">
+                                        <connections>
+                                            <segue destination="oNk-x1-hXj" kind="show" id="1Dq-EP-NPF"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="PAc-zy-JNd">
-                                <rect key="frame" x="214" y="494" width="121" height="29"/>
+                                <rect key="frame" x="214" y="487" width="121" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Major"/>
@@ -310,33 +318,22 @@
                                 <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Key:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zi-FC-PPB">
-                                <rect key="frame" x="122" y="440" width="131" height="41"/>
+                                <rect key="frame" x="122" y="433" width="131" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" continuous="NO" wraps="YES" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-eK-VDe">
-                                <rect key="frame" x="92" y="494" width="94" height="29"/>
+                                <rect key="frame" x="92" y="487" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="keyChanged:" destination="Xge-DO-q4V" eventType="valueChanged" id="dNv-12-Qyk"/>
                                 </connections>
                             </stepper>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5S-FC-itg">
-                                <rect key="frame" x="20" y="547" width="46" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
-                                <state key="normal" title="^">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="sdp-zt-gkw"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-CU-u0I">
-                                <rect key="frame" x="93" y="237" width="94" height="21"/>
+                                <rect key="frame" x="93" y="194" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -373,6 +370,17 @@
                                     <action selector="chooseSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="cJe-Q4-oDU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L5S-FC-itg">
+                                <rect key="frame" x="16" y="568" width="46" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="▶">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSong:" destination="Xge-DO-q4V" eventType="touchUpInside" id="sdp-zt-gkw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -397,6 +405,246 @@
                 <exit id="2IC-cV-Omz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="884" y="138.98050974512745"/>
+        </scene>
+        <!--Drums View Controller-->
+        <scene sceneID="n2O-3q-wYZ">
+            <objects>
+                <viewController id="OV4-M3-i13" customClass="DrumsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4ti-EA-37v"/>
+                        <viewControllerLayoutGuide type="bottom" id="fkU-Al-mLf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hzb-96-G08">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b34-lG-o1h">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Home" width="105" id="PLc-av-5y4">
+                                        <connections>
+                                            <segue destination="Rea-T5-BpS" kind="unwind" unwindAction="unwindToThisViewController:" id="w4Q-gk-23o"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Mix" width="105" id="hyY-hS-tk1">
+                                        <connections>
+                                            <segue destination="1lB-dJ-Riu" kind="presentation" modalTransitionStyle="crossDissolve" id="YSg-iv-6Hx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Options" width="105" id="Bqg-Ja-a1E">
+                                        <connections>
+                                            <segue destination="oNk-x1-hXj" kind="show" id="mtF-tW-Flm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZS4-uE-uuE">
+                                <rect key="frame" x="15" y="492" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Kick" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="e18-cP-lKc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJl-3a-nCw">
+                                <rect key="frame" x="103" y="492" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Kick 2" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="R6x-Xs-Oy4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7U-bc-0pZ">
+                                <rect key="frame" x="191" y="492" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Snare" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="xFJ-4m-pjv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hS-tk-RzR">
+                                <rect key="frame" x="279" y="492" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Snare2" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="UYs-nm-RIN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTi-u5-Pol">
+                                <rect key="frame" x="16" y="404" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Kick 3" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="ZEe-0p-XFu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u3-pC-VFU">
+                                <rect key="frame" x="103" y="404" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Rimshot" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="HSS-gd-Gh5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAe-D8-Pq6">
+                                <rect key="frame" x="191" y="404" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Clap" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="Bhl-MH-8TO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzX-l5-OhD">
+                                <rect key="frame" x="279" y="404" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Snap" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="dF3-N0-NxQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="boK-9I-43z">
+                                <rect key="frame" x="15" y="316" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Open" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="agK-ut-0J0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXy-Ub-aMV">
+                                <rect key="frame" x="103" y="316" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Closed" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="Tmu-Vs-Mgv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pxI-DU-qg9">
+                                <rect key="frame" x="191" y="316" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Shaker" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="9X2-Bg-9cG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlH-qe-DxM">
+                                <rect key="frame" x="279" y="316" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Perc" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="XKG-ki-o7M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="12" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYC-GD-enJ">
+                                <rect key="frame" x="15" y="228" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Chords" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="65v-I2-7vg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="13" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1U-BI-d7v">
+                                <rect key="frame" x="103" y="228" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Feels" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="17X-wJ-oS8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="14" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F8E-oV-Go5">
+                                <rect key="frame" x="191" y="228" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Vox" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="NNz-Ld-DE6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="15" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLc-qe-TaR">
+                                <rect key="frame" x="279" y="228" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <state key="normal" title="Cry" backgroundImage="drumtile.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="padPushed:" destination="OV4-M3-i13" eventType="touchUpInside" id="POu-CZ-5Hq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLX-7F-hOp">
+                                <rect key="frame" x="58" y="90" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Play/Pause">
+                                    <color key="titleColor" red="0.21358916159999999" green="0.80064654349999997" blue="0.4423116446" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPauseSong:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s5M-7B-7I5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EQp-mh-OdE">
+                                <rect key="frame" x="224" y="90" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleColor" red="1" green="0.25665354480000002" blue="0.23205424620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopSongs:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ewx-Dh-LO7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eQU-IR-ZJ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Rea-T5-BpS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="139"/>
         </scene>
         <!--Track2 View Controller-->
         <scene sceneID="Vpb-7i-GJ9">
@@ -429,7 +677,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-Tg-la6">
-                                <rect key="frame" x="14" y="192" width="347" height="31"/>
+                                <rect key="frame" x="14" y="215" width="347" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
@@ -437,28 +685,28 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EM-19-QtC">
-                                <rect key="frame" x="183" y="168" width="108" height="21"/>
+                                <rect key="frame" x="183" y="191" width="108" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tempo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6y-Dt-7Vn">
-                                <rect key="frame" x="91" y="221" width="81" height="41"/>
+                                <rect key="frame" x="91" y="282" width="81" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OdR-Wu-kdw">
-                                <rect key="frame" x="39" y="377" width="43" height="38"/>
+                                <rect key="frame" x="39" y="483" width="43" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="128" minimumValue="1" maximumValue="320" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="cTJ-JA-3Ec">
-                                <rect key="frame" x="39" y="296" width="94" height="29"/>
+                                <rect key="frame" x="39" y="357" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
@@ -466,7 +714,7 @@
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="128" minimumValue="1" maximumValue="320" translatesAutoresizingMaskIntoConstraints="NO" id="IWg-V5-ANT">
-                                <rect key="frame" x="241" y="296" width="94" height="29"/>
+                                <rect key="frame" x="241" y="357" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
@@ -474,14 +722,14 @@
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+/- 0.1bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDd-kv-3cv">
-                                <rect key="frame" x="39" y="265" width="94" height="21"/>
+                                <rect key="frame" x="39" y="326" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+/- 1bpm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYc-05-hx9">
-                                <rect key="frame" x="241" y="266" width="94" height="21"/>
+                                <rect key="frame" x="241" y="327" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -492,28 +740,34 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <items>
-                                    <barButtonItem title="Home" width="71" id="Uzz-PU-HUU">
+                                    <barButtonItem title="Home" width="76" id="Uzz-PU-HUU">
                                         <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <connections>
                                             <segue destination="fOU-Vw-FB9" kind="unwind" unwindAction="unwindToThisViewController:" id="JX2-qj-6XO"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Mix" width="93" id="ynM-lj-9IF">
+                                    <barButtonItem title="Mix" width="76" id="ynM-lj-9IF">
                                         <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                         <connections>
-                                            <segue destination="1lB-dJ-Riu" kind="presentation" id="cKE-Ci-2lY"/>
+                                            <segue destination="1lB-dJ-Riu" kind="presentation" modalTransitionStyle="crossDissolve" id="cKE-Ci-2lY"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Drums" width="68" id="STx-bm-HPs">
+                                    <barButtonItem title="Drums" width="76" id="STx-bm-HPs">
                                         <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                        <connections>
+                                            <segue destination="OV4-M3-i13" kind="presentation" modalTransitionStyle="crossDissolve" id="qcN-Qa-8Vh"/>
+                                        </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Options" width="84" id="io9-Mr-4fc">
+                                    <barButtonItem title="Options" width="76" id="io9-Mr-4fc">
                                         <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                        <connections>
+                                            <segue destination="oNk-x1-hXj" kind="show" id="zi4-y2-qcu"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0OL-AM-2yU">
-                                <rect key="frame" x="214" y="383" width="121" height="29"/>
+                                <rect key="frame" x="214" y="489" width="121" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Major"/>
@@ -522,72 +776,29 @@
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Song Key:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYt-hg-b5o">
-                                <rect key="frame" x="122" y="328" width="131" height="41"/>
+                                <rect key="frame" x="122" y="434" width="131" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" wraps="YES" maximumValue="11" translatesAutoresizingMaskIntoConstraints="NO" id="5FL-6g-SP3">
-                                <rect key="frame" x="95" y="382" width="94" height="29"/>
+                                <rect key="frame" x="95" y="488" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <connections>
                                     <action selector="keyChanged:" destination="DVQ-GE-tSI" eventType="valueChanged" id="Ml0-we-nnz"/>
                                 </connections>
                             </stepper>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vVP-Hu-47C">
-                                <rect key="frame" x="214" y="447" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Yes"/>
-                                    <segment title="No"/>
-                                </segments>
-                                <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                            </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="V9g-7t-dIC">
-                                <rect key="frame" x="214" y="503" width="121" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Yes"/>
-                                    <segment title="No"/>
-                                </segments>
-                                <color key="tintColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sync Tempo?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Llx-mT-6un">
-                                <rect key="frame" x="39" y="440" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
-                                <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sync Key?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGV-Gt-r0k">
-                                <rect key="frame" x="39" y="496" width="150" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
-                                <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nK-Ng-EHh">
-                                <rect key="frame" x="20" y="560" width="46" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="24"/>
-                                <state key="normal" title="^">
-                                    <color key="titleColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="playSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="4gP-qZ-Ale"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Volume:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YHD-QI-upN">
-                                <rect key="frame" x="81" y="168" width="94" height="21"/>
+                                <rect key="frame" x="81" y="191" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="128.0 bpm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="859-U9-guI">
-                                <rect key="frame" x="180" y="219" width="136" height="44"/>
+                                <rect key="frame" x="180" y="280" width="136" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="24"/>
                                 <color key="textColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -622,6 +833,17 @@
                                     <action selector="chooseSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="TcD-Cj-eXZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nK-Ng-EHh">
+                                <rect key="frame" x="16" y="579" width="46" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="▶">
+                                    <color key="titleColor" cyan="0.0" magenta="1" yellow="0.0" black="0.0" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playSong:" destination="DVQ-GE-tSI" eventType="touchUpInside" id="4gP-qZ-Ale"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -635,8 +857,6 @@
                         <outlet property="lbTempo2" destination="859-U9-guI" id="Cci-4e-yGC"/>
                         <outlet property="lbVolume2" destination="8EM-19-QtC" id="E2d-eZ-GAR"/>
                         <outlet property="sgKeyFlag2" destination="0OL-AM-2yU" id="ALQ-J2-Ci2"/>
-                        <outlet property="sgSyncKey2" destination="V9g-7t-dIC" id="OT7-Km-Qy6"/>
-                        <outlet property="sgSyncTempo2" destination="vVP-Hu-47C" id="JAd-aG-MtB"/>
                         <outlet property="slProgress2" destination="1Ba-4e-4dm" id="nZp-T4-vFD"/>
                         <outlet property="slVolume2" destination="Pl1-Tg-la6" id="zsQ-cw-zvV"/>
                         <outlet property="stDecimal2" destination="cTJ-JA-3Ec" id="QFp-iI-ZWh"/>
@@ -671,7 +891,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Drums" width="107" id="pPx-RE-EoQ"/>
-                                    <barButtonItem title="Options" width="109" id="V4d-Li-8MJ"/>
+                                    <barButtonItem title="Options" width="109" id="V4d-Li-8MJ">
+                                        <connections>
+                                            <segue destination="oNk-x1-hXj" kind="show" id="wz2-C3-lOB"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h3m-u9-CNO">
@@ -835,15 +1059,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVQ-lW-eih" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GY8-8v-2lj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="784.79999999999995" y="853.22338830584715"/>
+            <point key="canvasLocation" x="916" y="854"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Iq7-Oo-xbp">
+            <objects>
+                <viewController id="oNk-x1-hXj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2C3-W3-9pQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fnh-C1-0dQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zRN-Wc-lSS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZI9-bJ-rMz">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Home" width="340" id="Arx-cL-H0U">
+                                        <connections>
+                                            <segue destination="MN7-8E-C0s" kind="unwind" unwindAction="unwindToThisViewController:" id="RyG-2T-rAM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created by Travis Terry &amp; Patrick Simmons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-yr-l0h">
+                                <rect key="frame" x="31" y="41" width="312" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <color key="textColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pXQ-fc-UKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="MN7-8E-C0s" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1581.5999999999999" y="855.9220389805098"/>
         </scene>
     </scenes>
     <resources>
         <image name="AlbumArt1.png" width="280" height="280"/>
         <image name="AlbumArt2.png" width="280" height="280"/>
         <image name="ReSpinLogo.png" width="550" height="280"/>
+        <image name="drumtile.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZZd-Kb-c6c"/>
+        <segue reference="mtF-tW-Flm"/>
+        <segue reference="xuO-aM-2jg"/>
+        <segue reference="YSg-iv-6Hx"/>
     </inferredMetricsTieBreakers>
 </document>

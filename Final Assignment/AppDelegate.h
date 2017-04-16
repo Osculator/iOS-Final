@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import <AVFoundation/AVAudioPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "songData.h"
 
@@ -27,8 +26,8 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) NSArray *keyArray;
-@property (strong, nonatomic) IBOutlet AVAudioPlayer *audioPlayer;
-@property (strong, nonatomic) IBOutlet AVAudioPlayer *audioPlayer2;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer;
+@property (strong, nonatomic) AVAudioPlayer *audioPlayer2;
 @property (strong, nonatomic) MPMediaItem *song;
 @property (strong, nonatomic) MPMediaItem *song2;
 @property float volNum;
