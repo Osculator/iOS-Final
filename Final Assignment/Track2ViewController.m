@@ -6,6 +6,9 @@
 //  Copyright © 2017 Travis Terry & Patrick Simmons. All rights reserved.
 //
 
+//AUTHOR: Patrick Simmons
+//This class allows you to pick and change songs for track1. You can change the volume and set the temp of the song as well.
+
 #import "Track2ViewController.h"
 
 @interface Track2ViewController ()
@@ -13,8 +16,9 @@
 @end
 
 @implementation Track2ViewController
-@synthesize keyArray2, slVolume2, sgKeyFlag2, sgSyncKey2, sgSyncTempo2, stKey2, stDecimal2, stWholeNum2, lbVolume2, lbTempo2, lbKey2, lbArtist2, lbSongTitle2, btArtwork2, lbSongLength2, track2Picker, btPlayPause2, myTimer, myTimer2, slProgress2, md;//audioPlayer2, song2;
+@synthesize keyArray2, slVolume2, sgKeyFlag2, sgSyncKey2, sgSyncTempo2, stKey2, stDecimal2, stWholeNum2, lbVolume2, lbTempo2, lbKey2, lbArtist2, lbSongTitle2, btArtwork2, lbSongLength2, track2Picker, btPlayPause2, myTimer, myTimer2, slProgress2, md;
 
+//This method is when a user clicks on this button and allows the user to begin to choose a song
 - (IBAction) chooseSong: (id) sender
 {
     track2Picker =
@@ -29,6 +33,7 @@
         [md.audioPlayer2 pause];
 }
 
+//This method allows a user to select a song from their music library, and will display all the information that was stored about the song.
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
 {
     NSString *title=btPlayPause2.titleLabel.text;
@@ -42,7 +47,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     if(mediaItemCollection)
     {
-        //MPMediaItem *song=[[mediaItemCollection items] objectAtIndex:0];
         md.song2=[[mediaItemCollection items] objectAtIndex:0];
         if (! md.song2) {
             return;
@@ -81,13 +85,13 @@
         if(!md.audioPlayer2){
             md.audioPlayer2 = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
         } else {
-            //[audioPlayer replaceCurrentItemWithPlayerItem:[AVPlayerItem playerItemWithURL:itemURL]];
             NSLog(@"exit");
             return;
         }
     }
 }
 
+//This method is for when we have finished picking a song to close the view that was opened.
 - (void) mediaPickerDidCancel: (MPMediaPickerController *) mediaPicker
 {
     NSString *title=btPlayPause2.titleLabel.text;
@@ -100,6 +104,8 @@
     }
 }
 
+//This method is for when the user clicks to play/pause the song
+//it also starts and pauses a timer to keep track of how far you are into the song
 -(IBAction)playSong:(id)sender
 {
     NSString *title = [(UIButton *)sender currentTitle];
@@ -131,10 +137,9 @@
     
 }
 
+//This method is to keep track of how much time the timer has gone through and to update the label every second
 - (void)updateTimeLeft {
-    //AVPlayerItem *currentItem = md.audioPlayer2.currentItem;
     NSTimeInterval timeLeft = md.audioPlayer2.currentTime;
-    // update your UI with timeLeft
     int songSeconds = md.song2.playbackDuration;
     int songMinute = md.song2.playbackDuration/60;
     songSeconds = (int)songSeconds%60;
@@ -149,7 +154,6 @@
     {
         [btPlayPause2 setTitle:@"▶" forState:UIControlStateNormal];
         [md.audioPlayer2 pause];
-        //[md.audioPlayer2 seekToTime:kCMTimeZero];
         md.audioPlayer2.currentTime=0;
         
         curSongSeconds = 0;
@@ -160,24 +164,25 @@
     }
 }
 
+//This method is to show what the progress is of the song through a slider
 -(IBAction)sliderProgressChange:(id)sender
 {
-    //AVPlayerItem *currentItem = md.audioPlayer2.currentItem;
     NSTimeInterval timeLeft = md.audioPlayer2.currentTime;
     NSTimeInterval dur = md.audioPlayer2.duration;
     [slProgress2 setMaximumValue:dur];
     [slProgress2 setValue:timeLeft];
 }
 
+//This method allows the user to change the volume of the song
 -(IBAction)sliderVolumeChanged:(id)sender
 {
     [self updateLabel];
     md.volNum2 = slVolume2.value;
     md.volNum2=md.volNum2/100;
-    //NSLog(@"%.2f", volNum);
     md.audioPlayer2.volume=md.volNum2;
 }
 
+//This method allows for the tempo of the song to be set by .1
 -(IBAction)tempoDecimalChanged:(id)sender{
     float decimal = stDecimal2.value;
     md.songBPM2 = decimal;
@@ -185,6 +190,7 @@
     stWholeNum2.value = decimal;
 }
 
+//This method allows for the tempo of the song to be set by 1
 -(IBAction)tempoWholeChanged:(id)sender{
     float wholeNum = stWholeNum2.value;
     md.songBPM2 = wholeNum;
@@ -192,11 +198,13 @@
     stDecimal2.value = wholeNum;
 }
 
+//This method just updates the label of what the key could be changed to
 -(IBAction)keyChanged:(id)sender {
     int key = stKey2.value;
     [lbKey2 setText:[keyArray2 objectAtIndex:key]];
 }
 
+//This method updates the label of what the voulme will be at
 -(void)updateLabel
 {
     float vol = slVolume2.value;
@@ -205,7 +213,7 @@
     [lbVolume2 setText:strVol];
 }
 
-
+//This method laods in the app delegate
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -219,14 +227,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+//when we leave this view the song will be paused and resarted
 -(void)viewWillDisappear:(BOOL)animated {
     if(md.audioPlayer2){
         [md.audioPlayer2 pause];
-        //[md.audioPlayer2 seekToTime:kCMTimeZero];
         md.audioPlayer2.currentTime=0;
     }
 }
 
+//when we come back to this view all of the info that was changed before we left the page will be remembered
 -(void)viewWillAppear:(BOOL)animated {
     NSLog(@"%@", md.song2.artist);
     NSString *songArtist = [NSString stringWithFormat:@"%@", md.song2.artist];

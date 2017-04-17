@@ -6,6 +6,9 @@
 //  Copyright © 2017 Travis Terry & Patrick Simmons. All rights reserved.
 //
 
+//AUTHOR: Patrick Simmons
+//This class controls the main menu of the application. From this page you can go to all of the other pages by clicking onto the appropriate buttons. When you have songs selected you can play/pause both of the songs together.
+
 #import "ViewController.h"
 
 @interface ViewController ()
@@ -16,6 +19,7 @@
 @implementation ViewController
 @synthesize md, lbArtist, lbArtist2, lbSongTitle, lbSongTitle2, btArtwork, btArtwork2;
 
+//This method allows you to play/pause the tracks that you selected together
 -(IBAction)playPauseSong:(id)sender{
     if([md.audioPlayer isPlaying])
         [md.audioPlayer pause];
@@ -27,6 +31,7 @@
         [md.audioPlayer2 play];
 }
 
+//This method allows you to stop the song and it restarts it
 -(IBAction)stopSongs:(id)sender
 {
     [md.audioPlayer pause];
@@ -35,7 +40,7 @@
     md.audioPlayer2.currentTime=0;
 }
 
-
+//When the app loads for the first time we set the volume to 50 for each track.
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
@@ -44,21 +49,24 @@
     md.volNum2=50;
 }
 
+//This method happens when some one changes from this view and it will stop and restart each track.
+//It will also remeber the volume the tracks were set at.
 -(void)viewWillDisappear:(BOOL)animated {
     if(md.audioPlayer){
         [md.audioPlayer pause];
-        //[md.audioPlayer seekToTime:kCMTimeZero];
         md.audioPlayer.currentTime=0;
     }
     if(md.audioPlayer2){
         [md.audioPlayer2 pause];
-        //[md.audioPlayer2 seekToTime:kCMTimeZero];
         md.audioPlayer.currentTime=0;
     }
     md.audioPlayer.volume=md.volNum;
     md.audioPlayer2.volume=md.volNum2;
 }
 
+//When we come back to this view from one of the other views it will remember what songs
+//should be played together and what tracks they are. They will show the album art for each song, artist,
+//and song title. It also sets the volume for each song as well.
 - (IBAction)unwindToThisViewController:(UIStoryboardSegue *)sender {
     NSLog(@"%@", md.song.artist);
     NSString *songArtist = [NSString stringWithFormat:@"%@", md.song.artist];

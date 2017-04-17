@@ -6,6 +6,9 @@
 //  Copyright © 2017 Travis Terry & Patrick Simmons. All rights reserved.
 //
 
+//AUTHOR:Patrick Simmons
+//This class is to view a web view that goes to a website that can help a user understand some music theory
+
 #import "WebViewController.h"
 
 @interface WebViewController ()
@@ -15,18 +18,21 @@
 @implementation WebViewController
 @synthesize wbPage, activity;
 
+//This method allows for when the web view has started loading to have the activity indicator to start animating
 -(void)webViewDidStartLoad:(UIWebView *)webView
 {
     [activity setHidden:NO];
     [activity startAnimating];
 }
 
+//This method allows for when the web view has finished loading to have the activity indicator to stop animating and to disappear
 -(void)webViewDidFinishLoad:(UIWebView *)webView
 {
     [activity setHidden:YES];
     [activity stopAnimating];
 }
 
+//This method is for when the view loads to get the web view to go to the specified url
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

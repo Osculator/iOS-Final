@@ -19,8 +19,6 @@
     IBOutlet UILabel *lbArtist2;
     IBOutlet UIButton *btArtwork2;
 }
-//@property (strong, nonatomic) IBOutlet AVPlayer *audioPlayer;
-//@property (strong, nonatomic) IBOutlet AVPlayer *audioPlayer2;
 @property (strong, nonatomic) AppDelegate *md;
 @property (strong, nonatomic) IBOutlet UILabel *lbSongTitle;
 @property (strong, nonatomic) IBOutlet UILabel *lbArtist;

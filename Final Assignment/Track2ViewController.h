@@ -24,9 +24,7 @@
     IBOutlet UILabel *lbArtist2;
     IBOutlet UIButton *btArtwork2;
     IBOutlet UILabel *lbSongLength2;
-    //AVPlayer *audioPlayer2;
     MPMediaPickerController *track2Picker;
-    //MPMediaItem *song2;
     IBOutlet UIButton *btPlayPause2;
     NSTimer *myTimer;
     NSTimer *myTimer2;
@@ -49,9 +47,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lbArtist2;
 @property (strong, nonatomic) IBOutlet UIButton *btArtwork2;
 @property (strong, nonatomic) IBOutlet UILabel *lbSongLength2;
-//@property (strong, nonatomic) IBOutlet AVPlayer *audioPlayer2;
 @property (strong, nonatomic) MPMediaPickerController *track2Picker;
-//@property (strong, nonatomic) MPMediaItem *song2;
 @property (strong, nonatomic) IBOutlet UIButton *btPlayPause2;
 @property (strong, nonatomic) NSTimer *myTimer;
 @property (strong, nonatomic) NSTimer *myTimer2;

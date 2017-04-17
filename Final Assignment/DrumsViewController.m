@@ -148,25 +148,6 @@
     NSString *dp14String = [[NSBundle mainBundle] pathForResource:@"ICYVox" ofType:@"wav"];
     NSString *dp15String = [[NSBundle mainBundle] pathForResource:@"Cry" ofType:@"wav"];
     
-    
-    /*NSURL *dp0URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"CleanFatKick" ofType:@"wav"]];
-    NSURL *dp1URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"Bicc" ofType:@"wav"]];
-    NSURL *dp2URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"BWBSnare" ofType:@"wav"]];
-    NSURL *dp3URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"LowSnare" ofType:@"wav"]];
-    NSURL *dp4URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICY808" ofType:@"wav"]];
-    NSURL *dp5URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"Rim" ofType:@"wav"]];
-    NSURL *dp6URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"8bitClap" ofType:@"wav"]];
-    NSURL *dp7URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"FrozeSnap" ofType:@"wav"]];
-    NSURL *dp8URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICYHiHat" ofType:@"wav"]];
-    NSURL *dp9URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICYOpenHat" ofType:@"wav"]];
-    NSURL *dp10URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"Shaker" ofType:@"wav"]];
-    NSURL *dp11URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICYPerc" ofType:@"wav"]];
-    NSURL *dp12URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICECREAM" ofType:@"wav"]];
-    NSURL *dp13URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"feels" ofType:@"wav"]];
-    NSURL *dp14URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"ICYVox" ofType:@"wav"]];
-    NSURL *dp15URL = [[NSURL alloc] initWithString:[[NSBundle mainBundle] pathForResource:@"Cry" ofType:@"wav"]];*/
-    
-    
     dp0=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp0String] error:NULL];
     dp1=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp1String] error:NULL];
     dp2=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp2String] error:NULL];
@@ -183,23 +164,6 @@
     dp13=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp13String] error:NULL];
     dp14=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp14String] error:NULL];
     dp15=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp15String] error:NULL];
-    
-    /*dp0 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp0URL error:nil];
-    dp1 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp1URL error:nil];
-    dp2 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp2URL error:nil];
-    dp3 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp3URL error:nil];
-    dp4 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp4URL error:nil];
-    dp5 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp5URL error:nil];
-    dp6 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp6URL error:nil];
-    dp7 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp7URL error:nil];
-    dp8 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp8URL error:nil];
-    dp9 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp9URL error:nil];
-    dp10 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp10URL error:nil];
-    dp11 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp11URL error:nil];
-    dp12 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp12URL error:nil];
-    dp13 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp13URL error:nil];
-    dp14 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp14URL error:nil];
-    dp15 = [[AVAudioPlayer alloc] initWithContentsOfURL:dp15URL error:nil];*/
     
     dp0.delegate = self;
     dp1.delegate = self;
