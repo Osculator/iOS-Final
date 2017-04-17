@@ -6,9 +6,6 @@
 //  Copyright © 2017 Travis Terry & Patrick Simmons. All rights reserved.
 //
 
-/*#import <MediaPlayer/MediaPlayer.h>
- #import <AVFoundation/AVPlayer.h>
- #import <AVFoundation/AVFoundation.h>*/
 #import "AppDelegate.h"
 
 @interface Track2ViewController : UIViewController<MPMediaPickerControllerDelegate>

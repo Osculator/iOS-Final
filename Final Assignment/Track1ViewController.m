@@ -35,8 +35,8 @@
 {
     //Data *person = [[Data alloc] initWitName:tbName.text Email:tbEmail.text Food:tbFood.text];
     NSString *title=btPlayPause.titleLabel.text;
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@""]){
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
     
@@ -98,8 +98,8 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@"⏸"]){
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
 }
@@ -107,10 +107,10 @@
 -(IBAction)playSong:(id)sender
 {
     NSString *title = [(UIButton *)sender currentTitle];
-    if([title isEqualToString:@"||"])
+    if([title isEqualToString:@"⏸"])
     {
         [md.audioPlayer pause];
-        title = @"^";
+        title = @"▶";
         [btPlayPause setTitle:title forState:UIControlStateNormal];
     }
     else
@@ -128,7 +128,7 @@
                                                  selector:@selector(sliderProgressChange:)
                                                  userInfo:nil
                                                   repeats:YES];
-            title = @"||";
+            title = @"⏸";
             [btPlayPause setTitle:title forState:UIControlStateNormal];
         }
     }
@@ -151,7 +151,7 @@
     
     if(timeLeft == md.song.playbackDuration)
     {
-        [btPlayPause setTitle:@"^" forState:UIControlStateNormal];
+        [btPlayPause setTitle:@"▶" forState:UIControlStateNormal];
         [md.audioPlayer pause];
         //[md.audioPlayer seekToTime:kCMTimeZero];
         md.audioPlayer.currentTime=0;
@@ -173,27 +173,27 @@
     [slProgress setValue:timeLeft];
 }
 
--(IBAction)sliderVolumeChanged:(id)sender
-{
-    [self updateLabel];
-    md.volNum = slVolume.value;
-    md.volNum=md.volNum/100;
-    //NSLog(@"%.2f", volNum);
-    md.audioPlayer.volume=md.volNum;
-}
-
 -(IBAction)tempoDecimalChanged:(id)sender{
     float decimal = stDecimal.value;
-    
     [lbTempo setText:[NSString stringWithFormat:@"%.1f bpm", decimal]];
     stWholeNum.value = decimal;
+    md.songBPM = decimal;
 }
 
 -(IBAction)tempoWholeChanged:(id)sender{
     float wholeNum = stWholeNum.value;
-    
     [lbTempo setText:[NSString stringWithFormat:@"%.1f bpm", wholeNum]];
     stDecimal.value = wholeNum;
+    md.songBPM = wholeNum;
+}
+
+-(IBAction)sliderVolumeChanged:(id)sender
+{
+    [self updateLabel];
+    md.volNum = slVolume.value;
+    md.volNum = md.volNum/100;
+    //NSLog(@"%.2f", volNum);
+    md.audioPlayer.volume=md.volNum;
 }
 
 -(IBAction)keyChanged:(id)sender {

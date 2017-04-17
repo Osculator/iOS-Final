@@ -7,19 +7,14 @@
 //
 
 #import "DrumsViewController.h"
-
 @interface DrumsViewController ()
 
 @end
 
 @implementation DrumsViewController
-@synthesize dp0, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12, dp13, dp14, dp15, soundsArray;
+@synthesize dp0, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12, dp13, dp14, dp15, soundsArray, md;
 
 -(IBAction)padPushed:(id)sender {
-    /*NSString *path = [[NSBundle mainBundle] pathForResource:@"8bitClap" ofType:@"wav"];
-     AVAudioPlayer* theAudio=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path] error:NULL];
-     theAudio.delegate = self;
-     [theAudio play];*/
     NSInteger tag = [sender tag];
     switch (tag) {
         case 0:
@@ -43,21 +38,9 @@
             [dp3 prepareToPlay];
             return;
         case 4:
-            /*if(dp4.isPlaying){
-                NSLog(@"Playing");
-                //[dp4 pause];
-                dp4.currentTime=0;
-                //[dp4 play];
-                //[dp4 prepareToPlay];
-                //[dp4 stop];
-                //[dp4 play];
-                //[dp4 prepareToPlay];
-                
-            }*/
-            //[dp4 stop];
             dp4.currentTime=0;
             [dp4 play];
-            //[dp4 prepareToPlay];
+            [dp4 prepareToPlay];
             return;
         case 5:
             dp5.currentTime=0;
@@ -117,13 +100,31 @@
     }
 }
 
+-(IBAction)playPauseSong:(id)sender{
+    if([md.audioPlayer isPlaying])
+        [md.audioPlayer pause];
+    else
+        [md.audioPlayer play];
+    
+    if([md.audioPlayer2 isPlaying])
+        [md.audioPlayer2 pause];
+    else
+        [md.audioPlayer2 play];
+}
+
+-(IBAction)stopSongs:(id)sender
+{
+    [md.audioPlayer pause];
+    md.audioPlayer.currentTime=0;
+    [md.audioPlayer2 pause];
+    md.audioPlayer2.currentTime=0;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategoryPlayback error:nil];
-    [AVAudioSession.sharedInstance setActive:true error:nil];
+    md = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [self loadSamples];
-    //soundsArray = [NSArray arrayWithObjects:dp0, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12, dp13, dp14, dp15, nil];
-    //self.imageData = [NSArray arrayWithObjects:@"avatar1.png", @"avatar2.png", @"avatar3.png", nil];
 }
 
 
@@ -173,7 +174,7 @@
     dp4=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp4String] error:NULL];
     dp5=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp5String] error:NULL];
     dp6=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp6String] error:NULL];
-    dp7=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp7String] error:NULL];\
+    dp7=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp7String] error:NULL];
     dp8=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp8String] error:NULL];
     dp9=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp9String] error:NULL];
     dp10=[[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:dp10String] error:NULL];
@@ -217,37 +218,9 @@
     dp14.delegate = self;
     dp15.delegate = self;
     
-    //dp4.volume=8.0;
+    dp0.volume = dp1.volume = dp2.volume = dp3.volume = dp4.volume = dp5.volume = dp6.volume = dp7.volume = dp8.volume = dp9.volume = dp10.volume = dp11.volume = dp12.volume = dp13.volume = dp14.volume = dp15.volume = 1;
 }
 
--(void)dealloc {
-    [dp0 release];
-    [dp1 release];
-    [dp2 release];
-    [dp3 release];
-    [dp4 release];
-    [dp5 release];
-    [dp6 release];
-    [dp7 release];
-    [dp8 release];
-    [dp9 release];
-    [dp10 release];
-    [dp11 release];
-    [dp12 release];
-    [dp13 release];
-    [dp14 release];
-    [dp15 release];
-    [super dealloc];
-}
-
-/*-(MPMediaItem *)getMediaItemForURL:(NSURL *)url
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -255,6 +228,5 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end

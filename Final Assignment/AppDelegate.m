@@ -14,12 +14,15 @@
 @end
 
 @implementation AppDelegate
-@synthesize keyArray, audioPlayer, audioPlayer2, song, song2, volNum, volNum2, songBPM, songBPM2;
+@synthesize keyArray, audioPlayer, audioPlayer2, song, song2, volNum, volNum2, songBPM, songBPM2, mixBPM;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
+    songBPM = songBPM2 = mixBPM = 128;
+    [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategoryPlayback error:nil];
+    [AVAudioSession.sharedInstance setActive:true error:nil];
     return YES;
 }
 

@@ -20,8 +20,9 @@
     MPMediaItem *song2;
     float volNum;
     float volNum2;
-    int songBPM;
+    float songBPM;
     float songBPM2;
+    float mixBPM;
 }
 
 @property (strong, nonatomic) UIWindow *window;
@@ -32,8 +33,9 @@
 @property (strong, nonatomic) MPMediaItem *song2;
 @property float volNum;
 @property float volNum2;
-@property int songBPM;
+@property float songBPM;
 @property float songBPM2;
+@property float mixBPM;
 
 
 @end

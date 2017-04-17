@@ -32,8 +32,8 @@
 - (void) mediaPicker: (MPMediaPickerController *) mediaPicker didPickMediaItems: (MPMediaItemCollection *) mediaItemCollection
 {
     NSString *title=btPlayPause2.titleLabel.text;
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@"⏸"]){
+        title = @"▶";
         [btPlayPause2 setTitle:title forState:UIControlStateNormal];
     }
     
@@ -75,7 +75,7 @@
         
         NSURL *url = [md.song2 valueForProperty:MPMediaItemPropertyAssetURL];
         
-        if([title isEqualToString:@"||"])
+        if([title isEqualToString:@"⏸"])
             [md.audioPlayer2 pause];
         
         if(!md.audioPlayer2){
@@ -94,8 +94,8 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
-    if([title isEqualToString:@"||"]){
-        title = @"^";
+    if([title isEqualToString:@"⏸"]){
+        title = @"▶";
         [btPlayPause2 setTitle:title forState:UIControlStateNormal];
     }
 }
@@ -103,10 +103,10 @@
 -(IBAction)playSong:(id)sender
 {
     NSString *title = [(UIButton *)sender currentTitle];
-    if([title isEqualToString:@"||"])
+    if([title isEqualToString:@"⏸"])
     {
         [md.audioPlayer2 pause];
-        title = @"^";
+        title = @"▶";
         [btPlayPause2 setTitle:title forState:UIControlStateNormal];
     }
     else
@@ -124,7 +124,7 @@
                                                   selector:@selector(sliderProgressChange:)
                                                   userInfo:nil
                                                    repeats:YES];
-            title = @"||";
+            title = @"⏸";
             [btPlayPause2 setTitle:title forState:UIControlStateNormal];
         }
     }
@@ -147,7 +147,7 @@
     
     if(timeLeft == md.song2.playbackDuration)
     {
-        [btPlayPause2 setTitle:@"^" forState:UIControlStateNormal];
+        [btPlayPause2 setTitle:@"▶" forState:UIControlStateNormal];
         [md.audioPlayer2 pause];
         //[md.audioPlayer2 seekToTime:kCMTimeZero];
         md.audioPlayer2.currentTime=0;
@@ -180,14 +180,14 @@
 
 -(IBAction)tempoDecimalChanged:(id)sender{
     float decimal = stDecimal2.value;
-    
+    md.songBPM2 = decimal;
     [lbTempo2 setText:[NSString stringWithFormat:@"%.1f bpm", decimal]];
     stWholeNum2.value = decimal;
 }
 
 -(IBAction)tempoWholeChanged:(id)sender{
     float wholeNum = stWholeNum2.value;
-    
+    md.songBPM2 = wholeNum;
     [lbTempo2 setText:[NSString stringWithFormat:@"%.1f bpm", wholeNum]];
     stDecimal2.value = wholeNum;
 }

@@ -55,28 +55,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Final Assignment/DrumsViewController.m"
-            timestampString = "514013504.706748"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "@synthesize dp0, dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12, dp13, dp14, dp15, soundsArray;"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Final Assignment/DrumsViewController.h"
-            timestampString = "514057107.051283"
+            timestampString = "514082185.017024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "-padPushed:"
             landmarkType = "6">
          </BreakpointContent>
@@ -87,13 +71,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Final Assignment/DrumsViewController.m"
-            timestampString = "514057285.70777"
+            filePath = "Final Assignment/MixViewController.m"
+            timestampString = "514086741.082648"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "-padPushed:"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-bpmOptionChanged:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

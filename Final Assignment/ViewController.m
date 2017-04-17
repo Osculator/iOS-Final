@@ -33,7 +33,6 @@
     md.audioPlayer.currentTime=0;
     [md.audioPlayer2 pause];
     md.audioPlayer2.currentTime=0;
-
 }
 
 
