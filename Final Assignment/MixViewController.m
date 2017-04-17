@@ -55,7 +55,7 @@
         [md.audioPlayer setRate:(md.songBPM2 / md.songBPM)];
         [md.audioPlayer2 setRate:1];
     } if (segmentIndex == 2){
-        [md.audioPlayer setRate:(md.songBPM / md.songBPM)];
+        [md.audioPlayer setRate:(md.mixBPM / md.songBPM)];
         [md.audioPlayer2 setRate:(md.mixBPM / md.songBPM2)];
     }
 }

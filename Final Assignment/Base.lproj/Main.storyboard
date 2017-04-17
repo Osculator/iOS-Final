@@ -1109,10 +1109,10 @@
             </objects>
             <point key="canvasLocation" x="884" y="856"/>
         </scene>
-        <!--View Controller-->
+        <!--Web View Controller-->
         <scene sceneID="Iq7-Oo-xbp">
             <objects>
-                <viewController id="oNk-x1-hXj" sceneMemberID="viewController">
+                <viewController id="oNk-x1-hXj" customClass="WebViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2C3-W3-9pQ"/>
                         <viewControllerLayoutGuide type="bottom" id="fnh-C1-0dQ"/>
@@ -1133,15 +1133,32 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Created by Travis Terry &amp; Patrick Simmons" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-yr-l0h">
-                                <rect key="frame" x="31" y="41" width="312" height="211"/>
+                                <rect key="frame" x="31" y="3" width="312" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vI0-Bb-dNa">
+                                <rect key="frame" x="0.0" y="195" width="375" height="428"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oNk-x1-hXj" id="Qbk-SS-tXn"/>
+                                </connections>
+                            </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eH9-Dc-pBS">
+                                <rect key="frame" x="169" y="391" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.1406248212" green="0.68196183440000002" blue="0.93780779839999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="activity" destination="eH9-Dc-pBS" id="XdL-ef-GaO"/>
+                        <outlet property="wbPage" destination="vI0-Bb-dNa" id="Luj-Vh-Fzq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXQ-fc-UKK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="MN7-8E-C0s" userLabel="Exit" sceneMemberID="exit"/>
@@ -1156,8 +1173,8 @@
         <image name="drumtile.png" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xuO-aM-2jg"/>
         <segue reference="KJ3-Jb-oqd"/>
-        <segue reference="wz2-C3-lOB"/>
+        <segue reference="xuO-aM-2jg"/>
+        <segue reference="1Dq-EP-NPF"/>
     </inferredMetricsTieBreakers>
 </document>
