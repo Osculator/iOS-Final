@@ -1058,6 +1058,7 @@
                                 <color key="maximumTrackTintColor" red="1" green="0.001635324071" blue="0.91003293730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="sliderVolumeChanged:" destination="Xge-DO-q4V" eventType="valueChanged" id="Gtv-ln-5Zz"/>
+                                    <action selector="sliderVolumeChanged:" destination="1lB-dJ-Riu" eventType="valueChanged" id="skA-Zh-yUG"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track Mix" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kcp-lg-nUM">
@@ -1175,6 +1176,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="KJ3-Jb-oqd"/>
         <segue reference="xuO-aM-2jg"/>
-        <segue reference="1Dq-EP-NPF"/>
+        <segue reference="wz2-C3-lOB"/>
     </inferredMetricsTieBreakers>
 </document>

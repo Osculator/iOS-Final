@@ -26,7 +26,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+-(IBAction)sliderVolumeChanged:(id)sender
+{
+    md.audioPlayer.volume = (slMix.value/100);
+    md.audioPlayer2.volume= 1-(slMix.value/100);
+}
 
 -(IBAction)tempoDecimalChanged:(id)sender{
     float decimal = stDecimal.value;

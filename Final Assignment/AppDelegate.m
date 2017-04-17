@@ -20,7 +20,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     keyArray = [NSArray arrayWithObjects:@"A",@"A#",@"B",@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",nil];
-    songBPM = songBPM2 = mixBPM = 128;
     [AVAudioSession.sharedInstance setCategory:AVAudioSessionCategoryPlayback error:nil];
     [AVAudioSession.sharedInstance setActive:true error:nil];
     return YES;

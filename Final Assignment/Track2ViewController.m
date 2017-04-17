@@ -240,6 +240,9 @@
     NSLog(@"%@", md.song2.artist);
     NSString *songArtist = [NSString stringWithFormat:@"%@", md.song2.artist];
     NSString *songTitle = [NSString stringWithFormat:@"%@", md.song2.title];
+    if(md.songBPM2) {
+        [lbTempo2 setText:[NSString stringWithFormat:@"%.1f bpm", md.songBPM2]];
+    }
     if([songArtist isEqualToString:@"(null)"])
         [lbArtist2 setText:@"Artist Unknown"];
     else
